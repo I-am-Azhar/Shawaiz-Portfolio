@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef } from "react";
 
 const logos = Array.from({ length: 11 }, (_, i) => `/assets/Work/${i + 1}.svg`);
@@ -25,7 +25,7 @@ export default function Work() {
   const logoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1]);
 
   // Animation variants
-  const headingVariants = {
+  const headingVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
