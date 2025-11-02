@@ -1,6 +1,7 @@
 import HeroPage from "@/components/HeroPage";
 import AboutMe from "@/components/AboutMe";
 import Work from "@/components/Work";
+import MyWork from "@/components/MyWork";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroPage />
       <AboutMe />
       <Work />
+      <MyWork />
     </>
   );
 }
