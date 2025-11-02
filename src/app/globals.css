@@ -19,6 +19,18 @@
   }
 }
 
+/* Prevent horizontal scrolling */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -41,6 +53,13 @@ body {
   }
 }
 
+/* Performance optimizations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -50,16 +69,5 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-}
-
-/* Performance optimizations */
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
   }
 }

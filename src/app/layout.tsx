@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Anton } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   description: "Shawaiz Portfolio - Showcasing my work and professional experience",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,9 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} antialiased overflow-x-hidden`}
       >
-        <div className="min-h-screen w-full relative">
+        <div className="min-h-screen w-full max-w-full relative overflow-x-hidden">
           {/* Radial Gradient Background from Top */}
           <div
             className="fixed inset-0 z-0 pointer-events-none"
